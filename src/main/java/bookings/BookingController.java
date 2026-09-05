@@ -51,7 +51,8 @@ public class BookingController {
             BookingRequest bookingRequest,
 
             @Positive(message = "Booking ID must be a positive number")
-            @PathVariable Long id) {
+            @PathVariable
+            Long id) {
         return null;
     }
 
