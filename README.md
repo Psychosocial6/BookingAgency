@@ -14,6 +14,7 @@ BookingAgency is a RESTful backend application that simulates a hotel booking se
 * Spring Boot 4.1.1
 * Spring Web MVC
 * Spring Data JPA
+* Spring Validation
 * Apache Maven
 * Lombok
 
