@@ -31,7 +31,8 @@ public class BookingController {
     @GetMapping("/{id}")
     public ResponseEntity<BookingResponse> getBookingById(
             @Positive(message = "Booking ID must be a positive number")
-            @PathVariable Long id) {
+            @PathVariable
+            Long id) {
         return null;
     }
 
