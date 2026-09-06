@@ -1,4 +1,4 @@
-package bookings;
+package org.booking.bookingagency.bookings;
 
 public enum BookingStatus {
     PENDING,

@@ -1,4 +1,4 @@
-package hotels;
+package org.booking.bookingagency.hotels;
 
 public record HotelResponse(long id,
                             String country,

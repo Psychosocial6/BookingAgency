@@ -1,4 +1,4 @@
-package rooms;
+package org.booking.bookingagency.rooms;
 
 public enum RoomType {
     STANDARD,

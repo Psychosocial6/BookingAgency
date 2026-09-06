@@ -1,4 +1,4 @@
-package bookings;
+package org.booking.bookingagency.bookings;
 
 import java.time.LocalDateTime;
 
