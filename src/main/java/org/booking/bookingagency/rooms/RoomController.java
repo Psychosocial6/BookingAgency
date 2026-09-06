@@ -29,29 +29,23 @@ public class RoomController {
     public ResponseEntity<RoomResponse> getRoomById(
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 
     @PostMapping
     public ResponseEntity<RoomResponse> createRoom(
-            @Valid
-            @RequestBody
-            RoomRequest roomRequest) {
+            @Valid @RequestBody RoomRequest roomRequest) {
         return null;
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<RoomResponse> updateRoom(
-            @Valid
-            @RequestBody
-            RoomRequest roomRequest,
+            @Valid @RequestBody RoomRequest roomRequest,
 
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 
@@ -59,8 +53,7 @@ public class RoomController {
     public ResponseEntity<Void> deleteRoom(
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 }

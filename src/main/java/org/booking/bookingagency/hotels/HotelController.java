@@ -38,36 +38,29 @@ public class HotelController {
     @GetMapping("/{id}")
     public ResponseEntity<HotelResponse> getHotelById(
             @Positive(message = "Hotel ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 
     @PostMapping
     public ResponseEntity<HotelResponse> createHotel(
-            @Valid
-            @RequestBody
-            HotelRequest hotelRequest) {
+            @Valid @RequestBody HotelRequest hotelRequest) {
         return null;
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<HotelResponse> updateHotel(
-            @Valid
-            @RequestBody
-            HotelRequest hotelRequest,
+            @Valid @RequestBody HotelRequest hotelRequest,
 
             @Positive(message = "Hotel ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteHotel(
             @Positive(message = "Hotel ID must be a positive number")
-            @PathVariable
-            Long id) {
+            @PathVariable Long id) {
         return null;
     }
 }
