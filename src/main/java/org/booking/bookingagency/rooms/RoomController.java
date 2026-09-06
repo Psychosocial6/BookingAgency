@@ -4,12 +4,14 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Validated
 @RequiredArgsConstructor
 @RequestMapping("/api/rooms")
@@ -22,6 +24,7 @@ public class RoomController {
             @Positive(message = "Hotel ID must be a positive number")
             @RequestParam(required = false)
             Long hotelId) {
+        log.info("getRooms called: hotelId={}", hotelId);
         return null;
     }
 
@@ -30,12 +33,14 @@ public class RoomController {
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
+        log.info("getRoomById called: id={}", id);
         return null;
     }
 
     @PostMapping
     public ResponseEntity<RoomResponse> createRoom(
             @Valid @RequestBody RoomRequest roomRequest) {
+        log.info("createRoom called: roomRequest={}", roomRequest);
         return null;
     }
 
@@ -46,6 +51,7 @@ public class RoomController {
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
+        log.info("updateRoom called: id={}, roomRequest={}", id, roomRequest);
         return null;
     }
 
@@ -54,6 +60,7 @@ public class RoomController {
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
+        log.info("deleteRoom called: id={}", id);
         return null;
     }
 }

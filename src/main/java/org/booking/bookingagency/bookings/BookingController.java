@@ -3,12 +3,14 @@ package org.booking.bookingagency.bookings;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Validated
 @RequiredArgsConstructor
 @RequestMapping("/api/bookings")
@@ -25,6 +27,7 @@ public class BookingController {
             @Positive(message = "Hotel ID must be a positive number")
             @RequestParam(required = false)
             Long hotelId) {
+        log.info("getBookings called: userId={}, hotelId={}", userId, hotelId);
         return null;
     }
 
@@ -32,12 +35,14 @@ public class BookingController {
     public ResponseEntity<BookingResponse> getBookingById(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("getBookingById called: id={}", id);
         return null;
     }
 
     @PostMapping
     public ResponseEntity<BookingResponse> createBooking(
             @Valid @RequestBody BookingRequest bookingRequest) {
+        log.info("createBooking called: bookingRequest={}", bookingRequest);
         return null;
     }
 
@@ -47,6 +52,7 @@ public class BookingController {
 
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("updateBooking called: id={}, bookingRequest={}", id, bookingRequest);
         return null;
     }
 
@@ -54,6 +60,7 @@ public class BookingController {
     public ResponseEntity<BookingResponse> confirmBooking(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("confirmBooking called: id={}", id);
         return null;
     }
 
@@ -61,6 +68,7 @@ public class BookingController {
     public ResponseEntity<BookingResponse> cancelBooking(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("cancelBooking called: id={}", id);
         return null;
     }
 
@@ -68,6 +76,7 @@ public class BookingController {
     public ResponseEntity<BookingResponse> checkInBooking(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("checkInBooking called: id={}", id);
         return null;
     }
 
@@ -75,6 +84,7 @@ public class BookingController {
     public ResponseEntity<BookingResponse> checkOutBooking(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("checkOutBooking called: id={}", id);
         return null;
     }
 
@@ -82,6 +92,7 @@ public class BookingController {
     public ResponseEntity<Void> deleteBooking(
             @Positive(message = "Booking ID must be a positive number")
             @PathVariable Long id) {
+        log.info("deleteBooking called: id={}", id);
         return null;
     }
 }

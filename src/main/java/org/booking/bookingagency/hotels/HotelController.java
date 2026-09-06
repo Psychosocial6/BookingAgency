@@ -4,12 +4,14 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Validated
 @RequiredArgsConstructor
 @RestController
@@ -32,6 +34,7 @@ public class HotelController {
             )
             @RequestParam(required = false)
             String city) {
+        log.info("getHotels called: country={}, city={}", country, city);
         return null;
     }
 
@@ -39,12 +42,14 @@ public class HotelController {
     public ResponseEntity<HotelResponse> getHotelById(
             @Positive(message = "Hotel ID must be a positive number")
             @PathVariable Long id) {
+        log.info("getHotelById called: id={}", id);
         return null;
     }
 
     @PostMapping
     public ResponseEntity<HotelResponse> createHotel(
             @Valid @RequestBody HotelRequest hotelRequest) {
+        log.info("createHotel called: hotelRequest={}", hotelRequest);
         return null;
     }
 
@@ -54,6 +59,7 @@ public class HotelController {
 
             @Positive(message = "Hotel ID must be a positive number")
             @PathVariable Long id) {
+        log.info("updateHotel called: id={}, hotelRequest={}", id, hotelRequest);
         return null;
     }
 
@@ -61,6 +67,7 @@ public class HotelController {
     public ResponseEntity<Void> deleteHotel(
             @Positive(message = "Hotel ID must be a positive number")
             @PathVariable Long id) {
+        log.info("deleteHotel called: id={}", id);
         return null;
     }
 }
