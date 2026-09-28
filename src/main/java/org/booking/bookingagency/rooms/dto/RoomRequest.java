@@ -1,8 +1,9 @@
-package org.booking.bookingagency.rooms;
+package org.booking.bookingagency.rooms.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
+import org.booking.bookingagency.rooms.RoomType;
 
 import java.math.BigDecimal;
 

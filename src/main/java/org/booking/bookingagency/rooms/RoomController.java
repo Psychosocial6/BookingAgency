@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.booking.bookingagency.rooms.dto.RoomRequest;
+import org.booking.bookingagency.rooms.dto.RoomResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +28,7 @@ public class RoomController {
             @RequestParam(required = false)
             Long hotelId) {
         log.info("getRooms called: hotelId={}", hotelId);
-        return null;
+        return ResponseEntity.ok(roomService.getRooms(hotelId));
     }
 
     @GetMapping("/{id}")
@@ -34,25 +37,24 @@ public class RoomController {
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
         log.info("getRoomById called: id={}", id);
-        return null;
+        return ResponseEntity.ok(roomService.getRoomById(id));
     }
 
     @PostMapping
     public ResponseEntity<RoomResponse> createRoom(
             @Valid @RequestBody RoomRequest roomRequest) {
         log.info("createRoom called: roomRequest={}", roomRequest);
-        return null;
+        return ResponseEntity.status(HttpStatus.CREATED).body(roomService.createRoom(roomRequest));
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<RoomResponse> updateRoom(
             @Valid @RequestBody RoomRequest roomRequest,
-
             @NotNull(message = "Room ID required")
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
         log.info("updateRoom called: id={}, roomRequest={}", id, roomRequest);
-        return null;
+        return ResponseEntity.ok(roomService.updateRoom(id, roomRequest));
     }
 
     @DeleteMapping("/{id}")
@@ -61,6 +63,7 @@ public class RoomController {
             @Positive(message = "Room ID must be a positive number")
             @PathVariable Long id) {
         log.info("deleteRoom called: id={}", id);
-        return null;
+        roomService.deleteRoom(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
