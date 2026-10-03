@@ -1,4 +1,4 @@
-package org.booking.bookingagency.exceptions;
+package org.booking.bookingagency.exceptions.custom;
 
 public class RoomNotFoundException extends NotFoundException {
     public RoomNotFoundException(Long id) {

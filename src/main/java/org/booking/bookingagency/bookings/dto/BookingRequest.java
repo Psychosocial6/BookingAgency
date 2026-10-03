@@ -1,4 +1,4 @@
-package org.booking.bookingagency.bookings;
+package org.booking.bookingagency.bookings.dto;
 
 import jakarta.validation.constraints.*;
 

@@ -2,7 +2,7 @@ package org.booking.bookingagency.rooms;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.booking.bookingagency.exceptions.RoomNotFoundException;
+import org.booking.bookingagency.exceptions.custom.RoomNotFoundException;
 import org.booking.bookingagency.rooms.dto.RoomRequest;
 import org.booking.bookingagency.rooms.dto.RoomResponse;
 import org.booking.bookingagency.util.RoomMapper;

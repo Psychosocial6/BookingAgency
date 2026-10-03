@@ -1,4 +1,4 @@
-package org.booking.bookingagency.hotels;
+package org.booking.bookingagency.hotels.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

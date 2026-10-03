@@ -1,4 +1,6 @@
-package org.booking.bookingagency.bookings;
+package org.booking.bookingagency.bookings.dto;
+
+import org.booking.bookingagency.bookings.BookingStatus;
 
 import java.time.LocalDateTime;
 
